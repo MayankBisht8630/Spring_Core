@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/beans/spring-context.xsd">
+
+
+<!-- This is our bean  -->
+<!-- <bean class="com.springcore.Student" name="Student1"> -->
+<!-- 		<property name="studentId"> this is a mata data -->
+<!-- 			<value>22344</value> using value as a tag -->
+<!-- 		</property> -->
+<!-- 		<property name="studentName"> -->
+<!-- 			<value>Mayank Bisht</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="studentAddress"> -->
+<!-- 			<value>Delhi</value> -->
+<!-- 		</property> -->
+		
+<!--    setting value as a attribute -->
+<!-- 		<property name="studentId" value="2344" /> this is a mata data -->
+
+<!-- 		<property name="studentName" value="Mayank Bisht" /> -->
+		
+<!-- 		<property name="studentAddress" value="Kashipur" /> -->
+			
+<!-- 	</bean> -->
+
+<!--     using p schema for bean 1-->
+    <bean class="com.springcore.Student" name="Student1" p:studentId="2344" p:studentName ="Maynk Bisht" p:studentAddress="Kashipur" />
+	
+<!-- 	<bean class="com.springcore.Student" name="Student2"> -->
+	
+<!-- 	   <property name="studentId" value="2341" /> this is a mata data -->
+
+<!-- 		<property name="studentName" value="Ajay Bisht" /> -->
+		
+<!-- 		<property name="studentAddress" value="Champawat" /> -->
+			
+<!-- 	</bean> -->
+	
+<!-- 	using p schema for bean 2 -->
+	<bean class="com.springcore.Student" name="Student2" p:studentId="2341" p:studentName ="Ajay Bisht" p:studentAddress="Champawat" />
+	
+</beans>

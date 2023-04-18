@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/beans/spring-context.xsd">
+
+	<bean name="emp1" class="com.springcore.collections.Emp">
+		<property name="name" value="Mayank" />
+		<!-- phones is a type of list so we use list to inject property -->
+		<property name="phones" > 
+<!--    <value>1234567891</value> agar ak he value hai toh list lagane k ijarurat nehi hai  -->
+		<list>
+			<value>1234567891</value>
+			<value>0123789456</value>
+			<value>7894561230</value>
+			<null/> <!-- this will give null at the last of the list -->
+<!-- 	    remove all the values so it will give empty list -->
+		</list>
+		</property>
+		
+<!-- 		here we are using sets for injecting property -->
+		<property name="addresses">
+		   <set>
+		       <value>Delhi</value>
+		       <value>Kashipur</value>
+		       <value>Dwarahat</value>
+		   </set>
+		</property>
+		
+<!-- 		here we are using map to inject the property -->
+		<property name="courses">
+		   <map>
+		      <entry key="Java" value="2 Months" />
+		      <entry key="Advanced Java" value="4 Months" />
+		      <entry key="Framework" value="4 Months" />
+		   </map>
+		</property>
+	</bean>
+</beans>
+

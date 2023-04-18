@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- standalone list -->
+	<!-- <util:list list-class="java.util.LinkedList" id="mybestfriends"> this 
+		will give us the linked list -->
+	<!-- <value>Mayank Bisht</value> -->
+	<!-- <value>Ajay Bisht</value> -->
+	<!-- <value>Rahul Pandey</value> -->
+	<!-- <value>Kshitiz Kaintura</value> -->
+	<!-- </util:list> -->
+
+	<util:list list-class="java.util.Vector" id="mybestfriends"> <!-- this will give us the vector list list -->
+		<value>Mayank Bisht</value>
+		<value>Ajay Bisht</value>
+		<value>Rahul Pandey</value>
+		<value>Kshitiz Kaintura</value>
+	</util:list>
+
+	<!-- standalone map -->
+	<util:map map-class="java.util.HashMap" id="fees">
+		<entry key="Java Core" value="10000" />
+		<entry key="Spring Framework" value="12000" />
+		<entry key="Java Advance" value="5000" />
+		<entry key="Java Basic" value="4000" />
+	</util:map>
+
+	<bean class="com.springcore.standalone.collections.person"
+		name="person">
+		<!-- <property name="friends"> -->
+		<!-- <ref bean="mybestfriends" /> -->
+		<!-- </property> -->
+		<property name="friends" ref="mybestfriends" />
+		<property name="feeStructure" ref="fees" />
+	</bean>
+
+	<bean class="com.springcore.standalone.collections.person"
+		name="person2"> <!-- we can use the list multiple times -->
+		<property name="friends" ref="mybestfriends" />
+	</bean>
+</beans>
