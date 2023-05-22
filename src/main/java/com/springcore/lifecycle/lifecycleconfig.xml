@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/beans/spring-context.xsd">
+
+	<bean class="com.springcore.lifecycle.samosa" name="s1" init-method="init" destroy-method="destroy"> <!-- configuration bean for xml lifecycle method -->
+         <property name="price" value="10"/>
+	</bean>
+	
+	<bean class="com.springcore.lifecycle.pepsi" name="p1"> <!-- configuration bean for interface lifecycle method -->
+	     <property name="price" value="20"></property>
+	</bean>
+	
+	<bean class="com.springcore.lifecycle.example" name="e1"> <!-- configuration bean for Annotation slifecycle method -->
+	     <property name="subject" value="Java Advance"></property>
+	</bean>
+	
+	
+</beans>
+
